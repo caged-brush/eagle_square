@@ -10,7 +10,7 @@ import passport from "passport";
 import session from "express-session";
 import pg from "pg";
 import bcrypt from "bcrypt";
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const app = express();
 const saltRounds = 10;
 const createToken = (id) => {
@@ -31,9 +31,9 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "http://10.50.228.148:3000",
-      "http://10.50.228.148:8081",
-      "exp://10.50.228.148:8081",
+      "http://10.50.38.237:3000",
+      "http://10.50.38.237:8081",
+      "exp://10.50.38.237:8081",
     ],
   })
 );

@@ -42,8 +42,12 @@ export default function Signup() {
   };
 
   const handleChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: name === "email" ? value.toLowerCase() : value,
+    });
   };
+  
 
   const handleUserSignup = async () => {
     const { fname, lname, email, password, confirmPassword } = formData;
@@ -54,7 +58,7 @@ export default function Signup() {
     }
 
     try {
-      const response = await axios.post("http://10.50.228.148:5000/register", {
+      const response = await axios.post("http://10.50.38.237:5001/register", {
         fname,
         lname,
         email,
